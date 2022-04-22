@@ -24,7 +24,7 @@ public class Array<T> {
 		}
 		data[count++] = value;
 	}
-	
+		
 	public void delete(T value) 
 	{
 		for(int i = 0; i < count; i++)
@@ -37,6 +37,24 @@ public class Array<T> {
 		for(int i = index; i < count; i++)
 			data[i] = data[i+1];
 		count--;
+	}
+	
+	public void sort() 
+	{
+		java.util.Arrays.sort(data, 0, count);
+	}
+	
+	public int search(T value) 
+	{
+		for(int i = 0; i < count; i++)
+			if(data[i].equals(value))
+				return i;
+		return -1;
+	}
+	
+	public int binarySearch(T value)
+	{
+		return java.util.Arrays.binarySearch(data, value);
 	}
 	
 	public void print() 
