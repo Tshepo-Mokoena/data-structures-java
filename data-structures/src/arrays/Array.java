@@ -25,6 +25,20 @@ public class Array<T> {
 		data[count++] = value;
 	}
 	
+	public void delete(T value) 
+	{
+		for(int i = 0; i < count; i++)
+			if(data[i].equals(value))
+				deleteAt(i);
+	}
+	
+	public void deleteAt(int index) 
+	{
+		for(int i = index; i < count; i++)
+			data[i] = data[i+1];
+		count--;
+	}
+	
 	public void print() 
 	{
 		StringBuilder builder = new StringBuilder(count).append("[ ");				
